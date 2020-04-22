@@ -1,0 +1,26 @@
+import networkx as nx
+from parse import read_input_file, write_output_file
+from utils import is_valid_network, average_pairwise_distance
+import sys
+
+def remove_leaf(T):
+ if(T == null):
+  return T
+ list_of_leaves = [x for x in T.nodes() if T.out_degree(x)==0 and T.in_degree(x)==1]
+ for leaf in list_of_leaves:
+  T.remove_node(leaf)
+ return T  
+ 
+
+
+def solve(G):
+    """
+    Args:
+        G: networkx.Graph
+    Returns:
+        T: networkx.Graph
+    """
+
+    # TODO: your code here!
+    T = nx.tree.minimum_spanning_edges(G, algorithm='kruskal', data=False)
+    pass
